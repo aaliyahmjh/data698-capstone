@@ -216,3 +216,34 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# DATA 698 Capstone project
+
+# macOS
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environments
+.env
+.venv/
+venv/
+
+# Raw large datasets
+data/raw/*.zip
+data/raw/*.gz
+data/raw/*.csv
+
+# Large processed datasets
+data/processed/*.csv
+data/processed/*.parquet
+
+# Temporary files
+*.tmp
+*.log
+
+# Jupyter / Anaconda temporary directories
+.virtual_documents/
+anaconda_projects/
