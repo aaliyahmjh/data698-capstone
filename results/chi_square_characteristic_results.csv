@@ -1,0 +1,5 @@
+characteristic,n,chi_square,degrees_of_freedom,p_value,cramers_v,minimum_expected,cells_expected_below_5,percent_cells_expected_below_5,effect_size
+attack_vector,1137,233.2061,3,2.8028508867000044e-50,0.4529,1.1689,2,25.0,Moderate
+attack_complexity,1137,25.6814,1,4.0268154282751433e-07,0.1503,27.6631,0,0.0,Small
+privileges_required,1137,272.6462,2,6.246500006132876e-60,0.4897,30.0009,0,0.0,Moderate
+user_interaction,1137,131.0879,1,2.3688253389713205e-30,0.3395,94.6781,0,0.0,Moderate
