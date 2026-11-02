@@ -1,0 +1,7 @@
+sample,threshold,total_kevs,below_threshold,percent_below
+Full sample (2020–2026),7,1137,138,12.14
+Full sample (2020–2026),8,1137,474,41.69
+Full sample (2020–2026),9,1137,694,61.04
+Exclude 2026 (2020–2025),7,999,123,12.31
+Exclude 2026 (2020–2025),8,999,434,43.44
+Exclude 2026 (2020–2025),9,999,631,63.16

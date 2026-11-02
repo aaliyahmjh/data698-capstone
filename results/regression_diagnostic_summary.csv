@@ -1,0 +1,8 @@
+diagnostic,result,interpretation
+Model convergence,Converged,Primary model converged successfully
+Multicollinearity,No major VIF concerns,No substantial multicollinearity detected
+Sparse outcome categories,Present,Attack-vector estimates require caution
+Cook's distance,"65 of 1,137 flagged (5.72%)",Potentially influential observations identified
+Influence sensitivity,Effect sizes changed,Directions remained consistent; magnitudes varied
+Complete separation,Present after excluding 65 observations,Standard logistic regression could not be refitted
+Regularized sensitivity,Completed,Confirmed sensitivity of several odds ratios

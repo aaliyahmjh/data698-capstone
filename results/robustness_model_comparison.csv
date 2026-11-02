@@ -1,0 +1,4 @@
+model,nobs,pseudo_r2,converged
+Original CVSS 9,1137,0.5027912510154744,True
+Exclude 2026,999,0.4950402221948931,True
+CVSS 3.1 only,1133,0.5016376174463975,True

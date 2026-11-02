@@ -1,0 +1,4 @@
+dataset,column,total_records,non_missing,missing,percent_available
+KEV subset,published,1138,1138,0,100.0
+KEV subset,last_modified,1138,1138,0,100.0
+KEV subset,kev_date_added,1138,1138,0,100.0

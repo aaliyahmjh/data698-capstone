@@ -1,0 +1,11 @@
+predictor,category,at_or_above_9,below_9,minimum_cell_count,zero_cell,very_sparse
+attack_vector_model,NETWORK,441,412,412,False,False
+attack_vector_model,LOCAL,1,264,1,False,True
+attack_vector_model,OTHER,1,18,1,False,True
+attack_complexity,LOW,436,630,436,False,False
+attack_complexity,HIGH,7,64,7,False,False
+privileges_required,NONE,431,353,353,False,False
+privileges_required,LOW,7,269,7,False,False
+privileges_required,HIGH,5,72,5,False,False
+user_interaction,NONE,426,468,426,False,False
+user_interaction,REQUIRED,17,226,17,False,False
