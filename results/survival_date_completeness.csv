@@ -1,4 +1,7 @@
 dataset,column,total_records,non_missing,missing,percent_available
+Full NVD dataset,published,239942,239942,0,100.0
+Full NVD dataset,last_modified,239942,239942,0,100.0
+Full NVD dataset,kev_date_added,239942,1139,238803,0.47
 KEV subset,published,1138,1138,0,100.0
 KEV subset,last_modified,1138,1138,0,100.0
 KEV subset,kev_date_added,1138,1138,0,100.0
