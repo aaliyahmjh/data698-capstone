@@ -1,0 +1,3 @@
+group,n,mean_epss,median_epss,p75_epss,p90_epss,pct_epss_ge_0.10,median_percentile,pct_in_top_10pct
+KEV,1139.0,0.494,0.434,0.928,0.998,71.993,0.986,81.299
+Non-KEV,230977.0,0.015,0.004,0.008,0.017,2.058,0.35,3.705

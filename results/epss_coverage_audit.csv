@@ -1,0 +1,4 @@
+group,cves,with_epss,missing,coverage_pct
+KEV,1139,1139,0,100.0
+Non-KEV,238803,230977,7826,96.72
+All,239942,232116,7826,96.74

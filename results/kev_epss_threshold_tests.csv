@@ -1,0 +1,4 @@
+threshold,n_below,n_at_or_above,median_epss_below,median_epss_at_or_above,mann_whitney_p
+7,138,1000,0.1341,0.5424,0.0
+8,474,664,0.1657,0.7771,0.0
+9,694,444,0.1895,0.9028,0.0
