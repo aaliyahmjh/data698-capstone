@@ -79,15 +79,17 @@ d = kev[kev["publication_year"].between(years[0], years[1])].copy()
 if d.empty:
     st.warning("No KEVs in the selected years.")
     st.stop()
+below_lab, above_lab = f"Below {cutoff:.1f}", f"{cutoff:.1f} and above"
+status_colors = {below_lab: "#EF553B", above_lab: "#636EFA"}
 d["below"] = d["cvss_score"] < cutoff
-d["status"] = np.where(d["below"], f"Below {cutoff:.1f}", f"{cutoff:.1f} and above")
+d["status"] = np.where(d["below"], below_lab, above_lab)
 
 n, n_below = len(d), int(d["below"].sum())
 ctx = nonkev.iloc[(nonkev["threshold"] - cutoff).abs().argmin()]
 
 c1, c2, c3, c4 = st.columns(4)
 c1.metric("Known-exploited vulnerabilities", f"{n:,}")
-c2.metric(f"Scoring below {cutoff:.1f}", f"{n_below:,}", f"{n_below / n * 100:.1f}% of KEVs", delta_color="off")
+c2.metric(f"Scoring below {cutoff:.1f}", f"{n_below:,} ({n_below / n * 100:.1f}%)")
 c3.metric("Median EPSS percentile of those",
           f"{d.loc[d['below'], 'epss_percentile'].median():.2f}" if n_below else "n/a")
 c4.metric("Same, for non-KEVs below cutoff", f"{ctx['median_percentile']:.2f}")
@@ -96,6 +98,7 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs(["Scores", "By year", "EPSS", "Weakness &
 
 with tab1:
     fig = px.histogram(d, x="cvss_score", color="status", nbins=40, barmode="overlay", opacity=0.75,
+                       color_discrete_map=status_colors, category_orders={"status": [below_lab, above_lab]},
                        labels={"cvss_score": "CVSS score", "status": ""})
     fig.add_vline(x=cutoff, line_dash="dash")
     fig.update_layout(margin=dict(l=0, r=0, t=30, b=0))
@@ -120,9 +123,10 @@ with tab3:
         int(ctx["n_nonkev_below"]), round(ctx["median_percentile"], 3),
         round(ctx["pct_top10_percentile"], 1), round(ctx["pct_epss_ge_0.10"], 1)]
     st.dataframe(summary)
-    fig = px.box(d, x="status", y="epss_percentile", points="outliers",
+    fig = px.box(d, x="status", y="epss_percentile", color="status", points="outliers",
+                 color_discrete_map=status_colors, category_orders={"status": [below_lab, above_lab]},
                  labels={"epss_percentile": "EPSS percentile (Sept 2, 2026 snapshot)", "status": ""})
-    fig.update_layout(margin=dict(l=0, r=0, t=30, b=0))
+    fig.update_layout(margin=dict(l=0, r=0, t=30, b=0), showlegend=False)
     st.plotly_chart(fig)
     st.caption("EPSS is a snapshot, not historical, and partly overlaps with KEV, so this is context, "
                "not independent validation.")
